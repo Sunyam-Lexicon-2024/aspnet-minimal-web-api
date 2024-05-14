@@ -1,0 +1,28 @@
+version: "3.0"
+
+services: 
+  app:
+    image: "mcr.microsoft.com/devcontainers/dotnet:1-8.0-bookworm"
+    command: "tail -f /dev/null"
+    env_file:
+      - ../.env
+    volumes:
+      - ..:/workspace
+    networks:
+        - development
+
+  database: 
+    image: "mcr.microsoft.com/mssql/server:2019-latest"
+    container_name: local-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_DATABASE: "DevelopmentDB"
+    ports:
+      - "1433:1433"
+    networks:
+      - development
+
+networks:
+  development:
+    driver: bridge
+
