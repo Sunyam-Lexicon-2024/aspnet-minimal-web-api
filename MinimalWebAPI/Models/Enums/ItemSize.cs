@@ -1,4 +1,4 @@
-namespace MinimalApi.Models.Enums;
+namespace MinimalWebAPI.Models.Enums;
 
 public enum ItemSize {
     small,

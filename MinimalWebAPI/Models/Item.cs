@@ -1,6 +1,6 @@
-using MinimalApi.Models.Enums;
+using MinimalWebAPI.Models.Enums;
 
-namespace MinimalApi.Models;
+namespace MinimalWebAPI.Models;
 
 public class Item {
     public int Id { get; set;}
